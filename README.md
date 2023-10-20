@@ -10,4 +10,9 @@
 
 **Скриншот теста:**:
 
-тест: ![screenshot1](https://github.com/andreich1rkov/lab5/blob/main/test.JPG)
+![screenshot1](https://github.com/andreich1rkov/lab5/blob/main/test.JPG)
+
+
+**Скриншот ошибки языка**
+
+![screenshot1](https://github.com/andreich1rkov/lab5/blob/main/ErrorTest.JPG)
