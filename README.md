@@ -8,11 +8,11 @@
 **Как и где запускать**: В репозитории находится программа расширения .py (файл python) "шифр Цезаря". Он создавался и редактировался в среде Microsoft Visual Studio, где и может быть запущен. Также код этой программы можно запустить в любом компиляторе.
 
 
-**Скриншот теста:**:
+**Скриншот теста:**
 
 ![screenshot1](https://github.com/andreich1rkov/lab5/blob/main/test.JPG)
 
 
-**Скриншот ошибки языка**
+**Скриншот ошибки языка**:
 
 ![screenshot1](https://github.com/andreich1rkov/lab5/blob/main/ErrorTest.JPG)
