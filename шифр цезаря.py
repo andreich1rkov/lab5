@@ -4,8 +4,28 @@ alfavit_EUa = 'abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz'
 alfavit_RU = 'АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ'
 alfavit_RUa = 'абвгдеёжзийклмнопрстуфхцчшщъыьэюяабвгдеёжзийклмнопрстуфхцчшщъыьэюя'
 
-n = int(input("Для шифрования сообщения введите 1, Для дешифровки - 2:  "))
-lang = input("Выберите язык ru/eu: ")
+
+# Выбор режима
+while True:
+    try:
+        n = int(input("Для шифрования сообщения введите 1, Для дешифровки - 2:  "))
+        if n not in range(1,3):
+            raise ValueError
+        break
+    except ValueError:
+        print("Ошибка. Для шифрования сообщения введите 1, Для дешифровки - 2:  ")
+
+# Выбр языка
+while True:
+    try:
+        lang = int(input("Выберите язык Для RU введите 1, для EU введите 2: "))
+        if lang not in range(1,3):
+            raise ValueError
+        break
+    except ValueError:
+        print("Ошибка. Для шифрования сообщения введите 1, Для дешифровки - 2:  ")
+
+# Ввод сообщения
 message = input("Введите сообщение: ")
 
 # Проверка на наличие латинских символов в строке
@@ -16,25 +36,35 @@ def Any_Latin_Letters(message):
     return False
 
 # Проверка на ошибку
-if lang == "ru" and Any_Latin_Letters(message) == True:
+if lang == 1 and Any_Latin_Letters(message) == True:
     print("Выберите другой язык.")
     exit()
 else: 
     pass
 
-if lang == "eu" and Any_Latin_Letters(message) == False:
+if lang == 2 and Any_Latin_Letters(message) == False:
     print("Выберите другой язык.")
     exit()
 else: 
     pass
 
+# Ввод шага шифрования
+while True:
+    try:
+        step = int(input("Введите шаг шифровки: "))
+        if step == 0:
+            raise ValueError
+        break
+    except ValueError:
+        print("Ошибка. Для шага шифровки введите целое число.")
+if step < 0:
+    step = abs(step)
 
-step = int(input("Введите шаг шифровки: "))
 result = ""
 
 
 if n == 1:
-    if lang == "ru":
+    if lang == 1:
         for i in message:
             if i.isupper():
                 mesto = alfavit_RU.find(i)
@@ -51,7 +81,7 @@ if n == 1:
 
 
 
-    if lang == "eu":
+    if lang == 2:
         for i in message:
             if i.isupper():
                 mesto = alfavit_EU.find(i)
@@ -68,7 +98,7 @@ if n == 1:
 
 
 if n == 2:
-    if lang == "ru":
+    if lang == 1:
         for i in message:
             if i.isupper():
                 mesto = alfavit_RU.find(i)
@@ -84,7 +114,7 @@ if n == 2:
                     result += i
         
     
-    if lang == "eu":
+    if lang == 2:
          for i in message:
             if i.isupper():
                 mesto = alfavit_EU.find(i)
@@ -98,6 +128,5 @@ if n == 2:
                     result += alfavit_EUa[new_mesto]
             else:
                 result += i
-
 
 print("Результат: ", result)
