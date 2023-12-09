@@ -4,6 +4,7 @@ alfavit_EUa = 'abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz'
 alfavit_RU = 'АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ'
 alfavit_RUa = 'абвгдеёжзийклмнопрстуфхцчшщъыьэюяабвгдеёжзийклмнопрстуфхцчшщъыьэюя'
 
+result = ""
 
 # Выбор режима
 while True:
@@ -36,13 +37,7 @@ def Any_Latin_Letters(message):
     return False
 
 # Проверка на ошибку
-if lang == 1 and Any_Latin_Letters(message) == True:
-    print("Выберите другой язык.")
-    exit()
-else: 
-    pass
-
-if lang == 2 and Any_Latin_Letters(message) == False:
+if lang == 1 and Any_Latin_Letters(message) == True or lang == 2 and Any_Latin_Letters(message) == False:
     print("Выберите другой язык.")
     exit()
 else: 
@@ -60,9 +55,9 @@ while True:
 if step < 0:
     step = abs(step)
 
-result = ""
 
 
+# Шифрование
 if n == 1:
     if lang == 1:
         for i in message:
